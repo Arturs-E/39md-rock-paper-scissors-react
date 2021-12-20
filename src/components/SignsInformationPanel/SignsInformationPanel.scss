@@ -1,0 +1,21 @@
+.game-signs-information {
+
+  &__heading {
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: #209cee;
+    text-transform: uppercase;
+  }
+
+  &__list-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+
+  &__list {
+    list-style: circle;
+  }
+}

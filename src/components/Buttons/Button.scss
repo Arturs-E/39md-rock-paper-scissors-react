@@ -1,0 +1,18 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--game-sign {
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+   &:hover {
+     color: #209cee;
+   }
+  }
+}

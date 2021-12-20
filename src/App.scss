@@ -1,0 +1,55 @@
+@import './helpers/css-reset';
+@import "../node_modules/nes.css/css/nes.css";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #212529;
+  color: #efefef
+}
+
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 12px;
+}
+
+.heading1 {
+  font-size: 28px;
+  text-align: center;
+  color: #92cc41;
+}
+
+.heading-wrapper {
+  padding: 24px 12px;
+  margin-bottom: 18px;
+}
+
+.game-signs-information-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
+  margin-bottom: 56px;
+}
+
+.turn-result-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 36px;
+}
+
+.turn-result-wrapper {
+  place-self: center center;
+}
+
+.turn-result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 12px;
+  justify-items: center;
+  align-items: center;
+}
+
+.turn-result-player-image {
+  max-width: 80px;
+}
