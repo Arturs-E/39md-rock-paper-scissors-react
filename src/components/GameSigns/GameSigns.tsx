@@ -7,10 +7,10 @@ import './GameSigns.scss';
 type GameSignsProps = {
   onMouseEnter: (value: GameData) => void;
   onMouseLeave: () => void;
-  makeTurn: (value: string) => void;
+  onClick: (value: string) => void;
 }
 
-const GameSigns:FC<GameSignsProps> = ({ onMouseEnter, onMouseLeave, makeTurn }) => (
+const GameSigns:FC<GameSignsProps> = ({ onMouseEnter, onMouseLeave, onClick }) => (
   <div className="game-sign-buttons-wrapper">
     <div className="game-sign-buttons">
       {
@@ -20,7 +20,7 @@ const GameSigns:FC<GameSignsProps> = ({ onMouseEnter, onMouseLeave, makeTurn }) 
             additionalClasses={`button--game-sign game-sign-buttons__${index}`}
             onMouseEnter={() => onMouseEnter(button)}
             onMouseLeave={() => onMouseLeave()}
-            onClick={() => makeTurn(button.name)}
+            onClick={() => onClick(button.name)}
           >
             <FontAwesomeIcon icon={button.icon} className="game-sign-icon" />
           </Button>

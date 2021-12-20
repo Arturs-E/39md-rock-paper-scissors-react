@@ -12,13 +12,13 @@ type ScoreProps = {
 const Score:FC<ScoreProps> = ({ score }) => (
   <div className="results-wrapper">
     <span>
-      {`Wins: ${score.wins}`}
+      {`Player: ${score.wins}`}
     </span>
     <span>
       {`Ties: ${score.ties}`}
     </span>
     <span>
-      {`Losses: ${score.losses}`}
+      {`SKYNET: ${score.losses}`}
     </span>
   </div>
 );
