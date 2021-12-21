@@ -43,11 +43,5 @@ const gameData: GameData[] = [
   },
 ];
 
-const navigationSound = new Audio('./assets/sfx_menu_move1.wav');
-navigationSound.volume = 0.05;
-
-const lostTurnSound = new Audio('./assets/sfx_sounds_negative1.wav');
-lostTurnSound.volume = 0.1;
-
-export { gameData, navigationSound, lostTurnSound };
+export { gameData };
 export type { GameData };

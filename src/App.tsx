@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
-import {
-  gameData, GameData, lostTurnSound, navigationSound,
-} from './data/game-data';
+import useSound from 'use-sound';
+import { gameData, GameData } from './data/game-data';
 import { getRandomSignName, getTurnResult } from './helpers/helper-functions';
 import GameSigns from './components/GameSigns/GameSigns';
 import Score from './components/Score/Score';
@@ -26,10 +25,12 @@ const App = () => {
   const [score, setScore] = useState(initialScore);
   const [signDescription, setSignDescription] = useState<GameData>();
   const [turnInformation, setTurnInformation] = useState<TurnInformation>();
+  const [playNavigationSound] = useSound('./assets/sfx_menu_move1.wav', { volume: 0.05 });
+  const [playLostTurnSound] = useSound('./assets/sfx_sounds_negative1.wav', { volume: 0.1 });
 
   const onMouseEnter = (sign: GameData) => {
     setSignDescription(sign);
-    navigationSound.play();
+    playNavigationSound();
   };
 
   const onMouseLeave = () => {
@@ -54,7 +55,7 @@ const App = () => {
     });
 
     if (turnResult === 'losses') {
-      lostTurnSound.play();
+      playLostTurnSound();
     }
 
     setTimeout(() => {
