@@ -27,6 +27,7 @@ const App = () => {
   const [turnInformation, setTurnInformation] = useState<TurnInformation>();
   const [playNavigationSound] = useSound('./assets/sfx_menu_move1.wav', { volume: 0.05 });
   const [playLostTurnSound] = useSound('./assets/sfx_sounds_negative1.wav', { volume: 0.1 });
+  const [playWonTurnSound] = useSound('./assets/sfx_sounds_powerup10.wav', { volume: 0.1 });
 
   const onMouseEnter = (sign: GameData) => {
     setSignDescription(sign);
@@ -56,6 +57,8 @@ const App = () => {
 
     if (turnResult === 'losses') {
       playLostTurnSound();
+    } else if (turnResult === 'wins') {
+      playWonTurnSound();
     }
 
     setScore({ ...score, [turnResult]: score[turnResult] + 1 });
