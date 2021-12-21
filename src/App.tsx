@@ -58,10 +58,7 @@ const App = () => {
       playLostTurnSound();
     }
 
-    setTimeout(() => {
-      setScore({ ...score, [turnResult]: score[turnResult] + 1 });
-      // setTurnInformation(undefined);
-    }, 1000);
+    setScore({ ...score, [turnResult]: score[turnResult] + 1 });
   };
 
   const getTurnIcon = (value: string) => gameData.find((sign) => sign.name === value)!.icon;
