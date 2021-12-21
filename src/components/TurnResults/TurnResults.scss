@@ -1,0 +1,20 @@
+.turn-result-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  column-gap: 36px;
+}
+
+.turn-result-wrapper {
+  place-self: center center;
+}
+
+.turn-result {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.turn-result-player-image {
+  max-width: 80px;
+}

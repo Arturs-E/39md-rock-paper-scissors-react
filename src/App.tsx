@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   gameData, GameData, lostTurnSound, navigationSound,
 } from './data/game-data';
@@ -8,13 +7,14 @@ import { getRandomSignName, getTurnResult } from './helpers/helper-functions';
 import GameSigns from './components/GameSigns/GameSigns';
 import Score from './components/Score/Score';
 import SignsInformationPanel from './components/SignsInformationPanel/SignsInformationPanel';
+import TurnResults from './components/TurnResults/TurnResults';
 
 const initialScore = {
   wins: 0,
   ties: 0,
   losses: 0,
 };
-type TurnInformation = {
+export type TurnInformation = {
   player: string;
   computer: string;
   result: string;
@@ -71,47 +71,14 @@ const App = () => {
         <div className="heading-wrapper">
           <h1 className="heading1">ROCK, PAPER, SCISSORS, LIZARD, SPOCK</h1>
         </div>
-        <Score score={score} />
-
-        <div className="game-signs-information-wrapper">
-          <GameSigns onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={makeTurn} />
-          <SignsInformationPanel signDescription={signDescription} />
+        <div className="content-wrapper">
+          <Score score={score} />
+          <div className="game-signs-information-wrapper">
+            <GameSigns onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={makeTurn} />
+            <SignsInformationPanel signDescription={signDescription} />
+          </div>
+          <TurnResults turnInformation={turnInformation} getTurnIcon={getTurnIcon} />
         </div>
-
-        <div className="turn-result-container">
-          <div className="nes-container is-dark with-title">
-            <h3 className="title">PLAYER</h3>
-            <div className="turn-result">
-              {/* <img src="./assets/unnamed.png" alt="player-logo" className="turn-result-player-image" /> */}
-              {turnInformation && (
-                <FontAwesomeIcon
-                  icon={getTurnIcon(turnInformation.player)}
-                  className="game-sign-icon"
-                  style={{ transform: 'rotateY(180deg)', color: turnInformation.playerIconColor }}
-                />
-              )}
-            </div>
-          </div>
-          <div className="turn-result-wrapper">
-            {turnInformation?.result === 'wins' && 'Player wins!'}
-            {turnInformation?.result === 'losses' && 'SKYNET wins!'}
-            {turnInformation?.result === 'ties' && "It's a tie!"}
-          </div>
-          <div className="nes-container is-dark with-title">
-            <h3 className="title">SKYNET</h3>
-            <div className="turn-result">
-              {/* <img src="./assets/cyberdyne.png" alt="player-logo" className="turn-result-player-image" /> */}
-              {turnInformation && (
-                <FontAwesomeIcon
-                  icon={getTurnIcon(turnInformation.computer)}
-                  className="game-sign-icon"
-                  style={{ color: turnInformation.computerIconColor }}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   );

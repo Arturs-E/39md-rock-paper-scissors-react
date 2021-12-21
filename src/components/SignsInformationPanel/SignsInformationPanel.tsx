@@ -20,7 +20,7 @@ const SignsInformationPanel:FC<SignsInformationPanelProps> = ({ signDescription 
         </div>
         <div className="game-signs-information__list-wrapper">
           <span>Loses against:</span>
-          <ul className="nes-list is-circle">
+          <ul className="nes-list is-circle game-signs-information__list">
             {signDescription.losesAgainst.map((value) => (<li key={value}>{value}</li>))}
           </ul>
         </div>

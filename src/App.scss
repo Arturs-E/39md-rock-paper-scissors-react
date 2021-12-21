@@ -14,6 +14,12 @@ body {
   padding: 24px 12px;
 }
 
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 48px;
+}
+
 .heading1 {
   font-size: 28px;
   text-align: center;
@@ -29,27 +35,5 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 48px;
-  margin-bottom: 72px;
-}
-
-.turn-result-container {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  column-gap: 36px;
-}
-
-.turn-result-wrapper {
-  place-self: center center;
-}
-
-.turn-result {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 12px;
-  justify-items: center;
-  align-items: center;
-}
-
-.turn-result-player-image {
-  max-width: 80px;
+  margin-bottom: 48px;
 }
