@@ -15,4 +15,9 @@
     row-gap: 4px;
   }
 
+  &__list {
+    list-style-type: square;
+    list-style-position: inside;
+  }
+
 }
