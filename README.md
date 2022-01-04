@@ -1,5 +1,7 @@
 # Rock, paper, scissors, lizard, spock game / CODELEX 2021
 
+![Rock paper scissors GIF](./Rock-paper-scissors-game.gif)
+
 ***
 
 ## Available Scripts
